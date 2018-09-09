@@ -37,7 +37,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", function(req, res){
-    req.logout();
+    if(req.isAuthenticated()){
+        req.logout();  
+    }
     res.render("landing")
 })
 
