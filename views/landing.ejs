@@ -1,0 +1,150 @@
+<% include partials/header %>
+<style>
+h1{
+    margin-top: 15%;
+    margin-left: 30%;
+    color: #00008b;
+}
+
+h2{
+    color: #0000b3;
+}
+
+#bla{
+    margin-top: 3%;
+}
+
+#select{
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+.btn{
+    width: 120px;
+    height: 100px;
+}
+
+p{
+    color: white;
+}
+
+.icon{
+    color: white;
+}
+
+#prestamo{
+    background-color:  #ff8533;
+    border: #ff8533;
+}
+
+#alertas-btn{
+    background-color: white;
+    border: red 2px solid;
+}
+
+.alertas-icon{
+    color: red;
+}
+
+#alertas-text{
+    color: red;
+}
+
+strong{
+    margin-left: 3%;
+}
+
+</style>
+
+<div class="row">
+    <div class="col-md-6"><img src="https://cdn0.talenteca.com/company-images/TK_COMPANY_LOGO-2018_03_28_04_36_35-78689220018807186051.png"></div>
+    <div class="col-md-6"><h1>Menú Principal <i class="fas fa-home"></i></h1></div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="select">
+        <h3><i class="fas fa-mouse-pointer"></i> <strong>Selecciona la operación que desea realizar</strong> </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2><i class="fas fa-money-bill-alt"></i> Con efectivo</h2>
+        </div> 
+    
+        <div class="col-md-6">
+            <h2><i class="fas fa-credit-card"></i> Con tarjeta</h2>
+        </div>     
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-primary" href="/pago/depositoCuenta"><i class="fas fa-credit-card icon"></i> <br> <p>Deposito <br> a cuentas</p> </a>   
+                    </div>
+
+                    <div class="col-md-6">
+                        <a class="btn btn-primary"><i class="fas fa-dollar-sign icon"></i> <br> <p>Pago de <br> servicios</p> </a>   
+                    </div>
+                </div>
+                
+                <div class="row" id="bla">
+                    <div class="col-md-6">
+                        <a class="btn btn-primary"><i class="fas fa-credit-card icon"></i> <br> <p>Pagar tarjeta <br> de crédito</p> </a>   
+                    </div>
+
+                    <div class="col-md-6">
+                        <a class="btn btn-primary"><i class="fas fa-handshake icon"></i> <br> <p>Pagar credito <br> o prestamo</p> </a>   
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-md-3">
+                            <a href="" class="btn btn-primary" id="prestamo"><i class="fas fa-donate icon"></i><br> <p>Prestamos <br> Disponibles</p> </a>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <a href="" class="btn btn-primary"><i class="fas fa-search icon"></i><br> <p>Consultar <br> saldos <br> y movimientos</p> </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="" class="btn btn-primary"><i class="fas fa-mobile-alt icon"></i><br> <p>Comprar <br> tiempo aire </p> </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="" class="btn btn-primary"><i class="fas fa-money-bill-alt icon"></i><br> <br> <p>Retirar</p> </a>
+                    </div>
+                </div>
+
+                <div class="row" id="bla">
+                    <div class="col-md-3">
+                        <a href="" class="btn btn-primary"  id="alertas-btn" ><i class="fas fa-exclamation-triangle alertas-icon"></i><br> <br> <p id="alertas-text">Alertas <br> Bancomer </p> </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a class="btn btn-primary"><i class="fas fa-dollar-sign icon"></i> <br> <p>Pago de <br> servicios</p> </a> 
+                    </div>
+
+                    <div class="col-md-3">
+                        <a class="btn btn-primary"><i class="fas fa-credit-card icon"></i> <br> <p>Pagar tarjeta <br> de crédito</p> </a> 
+                    </div>
+
+                    <div class="col-md-3">
+                        <a class="btn btn-primary"><i class="fas fa-plus icon"></i> <br> <p>Más <br> opciones</p> </a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% include partials/footer %>

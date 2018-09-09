@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<h1>Registra una cuenta y vincula con usuario</h1>
+
+<form action="/new/cuenta" method="POST">
+    <label>Nombre del beneficiario</label>
+    <input type="text" name="firstName">
+
+    <label>Email del beneficiario</label>
+    <input type="text" name="email">
+
+    <label>Folio</label>
+    <input type="text" name="folio">
+
+    <label>Numero de Cuenta</label>
+    <input type="text" name="data[numCuenta]">
+
+    <label>Clabe</label>
+    <input type="text" name="data[clabe]">
+
+    <label>Celular</label>
+    <input type="text" name="data[celular]">
+
+    <label>Correo</label>
+    <input type="text" name="data[correo]">
+
+    <label>Fecha</label>
+    <input type="text" name="data[fecha]">
+    <button>Enviar Informacion</button>    
+</form>
+
+<% include ../partials/footer %>

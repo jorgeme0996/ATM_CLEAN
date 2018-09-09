@@ -1,0 +1,70 @@
+<% include ../partials/header %>
+
+<h1>Registro de Usuarios</h1>
+
+<form action="/register" method="POST">
+
+    <label>Nombre</label>
+    <input type="text" name="data[firstName]">
+
+    <label>Apellido Paterno</label>
+    <input type="text" name="data[lastName]">
+
+    <label>Apellido Materno</label>
+    <input type="text" name="data[surName]">
+
+    <label>Genero</label>
+    <input type="text" name="data[gennder]">
+
+    <label>País</label>
+    <input type="text" name="data[birthData.country]">
+
+    <label>Estado</label>
+    <input type="text" name="data[birthData.state]">
+
+    <label>Fecha de nacimiento</label>
+    <input type="date" name="data[birthData.birthDate]">
+
+    <label>Tipo de documento</label>
+    <input type="text" name="data[identityDocuments.documentType]">
+
+    <label>Numero</label>
+    <input type="text" name="data[identityDocuments.number]">
+
+    <label>Nacionalidad</label>
+    <input type="text" name="data[nationalities.nationality]">
+
+    <label>Calle</label>
+    <input type="text" name="data[adresses.streetName]">
+
+    <label>Estado</label>
+    <input type="text" name="data[adresses.estate]">
+
+    <label>Codigo Postal</label>
+    <input type="text" name="data[adresses.zipCode]">
+
+    <label>Colonia</label>
+    <input type="text" name="data[adresses.neigborhood]">
+
+    <label>Delegacion/Municipio</label>
+    <input type="text" name="data[adresses.municipaly]">
+
+    <label>Numero Exterior</label>
+    <input type="text" name="data[adresses.exteriorNumber]">
+
+    <label>Numero Interior</label>
+    <input type="text" name="data[adresses.interiorNumber]">
+
+    <label>Email</label>
+    <input type="text" name="data[email]">
+
+    <label>Username</label>
+    <input type="text" name="data[username]">
+
+    <label>Password</label>
+    <input type="text" name="data[password]">
+
+    <button>Enviar Info</button>
+</form>
+
+<% include ../partials/footer %>
