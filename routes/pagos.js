@@ -5,6 +5,8 @@ var express     = require("express"),
     moment      = require("moment");
     middleware  = require("../middleware");
 
+moment.locale(es);
+
 router.get("/pago/depositoCuenta", function(req, res){
     res.render("pagos/depositoCuenta")
 });
