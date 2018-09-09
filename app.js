@@ -41,9 +41,7 @@ app.use(cuentasRoutes);
 app.use(usersRoutes);
 
 app.get("/", function(req, res){
-    // if(req.isAuthenticated()){
-    //     req.logout();  
-    // }
+    req.logout();
     res.render("landing")
 })
 
