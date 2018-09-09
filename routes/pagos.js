@@ -46,10 +46,7 @@ router.post("/retirar/cuenta", isLoggedIn, function(req, res){
             monto: req.body.retiro,
             descripcion: "Retiro"
         }
-        horaFecha   = {
-            hora: moment().format('LT'),
-            fecha: moment().format('L')
-        };
+        horaFecha   = new Date();
     Cuenta.find({numCuenta:cuenta}, function(err, cuenta){
         if(err){
             console.log(err);
