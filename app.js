@@ -13,8 +13,8 @@ var pagosRoutes     = require("./routes/pagos"),
     usersRoutes     = require("./routes/users");
 
 //seedDB();
-mongoose.connect("mongodb://localhost/atmClean", {useNewUrlParser: true});
-//mongoose.connect("mongodb://jorge:jorge007@ds249942.mlab.com:49942/base10", {useNewUrlParser:true});
+//mongoose.connect("mongodb://localhost/atmClean", {useNewUrlParser: true});
+mongoose.connect("mongodb://jorge:jorge007@ds251002.mlab.com:51002/atmclean", {useNewUrlParser:true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
