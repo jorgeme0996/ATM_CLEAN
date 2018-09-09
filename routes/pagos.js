@@ -12,6 +12,7 @@ router.get("/pago/depositoCuenta", function(req, res){
 });
 
 router.post("/pago/depositoCuenta", function(req, res){
+    moment.locale("es");
     var     numCuenta   = req.body.numCuenta,
             horaFecha   = {
                 hora: moment().format('LT'),
