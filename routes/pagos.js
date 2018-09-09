@@ -12,12 +12,9 @@ router.get("/pago/depositoCuenta", function(req, res){
 });
 
 router.post("/pago/depositoCuenta", function(req, res){
-    moment.locale("es");
+    
     var     numCuenta   = req.body.numCuenta,
-            horaFecha   = {
-                hora: moment().format('LT'),
-                fecha: moment().format('L')
-            }
+            horaFecha   = new Date();
     Cuenta.find({numCuenta: numCuenta}, function(err, cuenta){
         if(err){
             console.log(err);
@@ -31,7 +28,7 @@ router.post("/pago/depositoCuenta", function(req, res){
                     var monto = parseInt(req.body.data.monto)
                     cuenta[0].saldo = cuenta[0].saldo + monto;
                     cuenta[0].save();
-                    var text = "FECHA: "+ horaFecha.fecha + "     HORA: " + horaFecha.hora + "     CUENTA DE DEPOSITO: " + cuenta[0].numCuenta + "     EFEC. DEPOSITADO: $" + pago.monto + "     MOTIVO DE PAGO: " + pago.descripcion;
+                    var text = "FECHA: "+ horaFecha + "     CUENTA DE DEPOSITO: " + cuenta[0].numCuenta + "     EFEC. DEPOSITADO: $" + pago.monto + "     MOTIVO DE PAGO: " + pago.descripcion;
                     res.render("pagos/pagoQR", {cuenta: cuenta[0], horaFecha:horaFecha, pago:pago, text:text});
                 }
             });
@@ -65,7 +62,7 @@ router.post("/retirar/cuenta", isLoggedIn, function(req, res){
                     var monto = parseInt(data.monto)
                     cuenta[0].saldo = cuenta[0].saldo - monto;
                     cuenta[0].save();
-                    var text = "FECHA: "+ horaFecha.fecha + "     HORA: " + horaFecha.hora + "     CUENTA DE RETIRO: " + cuenta[0].numCuenta + "     EFEC. RETIRADO: $" + pago.monto + "     MOTIVO DE RETIRO: " + pago.descripcion + "     SALDO DISPONIBLE: " + cuenta[0].saldo;
+                    var text = "FECHA: "+ horaFecha + "    CUENTA DE RETIRO: " + cuenta[0].numCuenta + "     EFEC. RETIRADO: $" + pago.monto + "     MOTIVO DE RETIRO: " + pago.descripcion + "     SALDO DISPONIBLE: " + cuenta[0].saldo;
                     res.render("pagos/retiroQR", {cuenta: cuenta[0], horaFecha:horaFecha, pago:pago, text:text});
                 }
             })
