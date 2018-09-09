@@ -36,10 +36,47 @@ router.post("/pago/depositoCuenta", function(req, res){
     })
 });
 
-router.get("/pago/tajeta/depositoCuenta", function(req, res){
-    res.render("pagos/depositoTarjeta")
+router.get("/retirar/cuenta", isLoggedIn, function(req, res){
+    res.render("pagos/retiro");
 });
 
+router.post("/retirar/cuenta", isLoggedIn, function(req, res){
+    var cuenta      = req.body.cuenta,
+        data        = {
+            monto: req.body.retiro,
+            descripcion: "Retiro"
+        }
+        horaFecha   = {
+            hora: moment().format('LT'),
+            fecha: moment().format('L')
+        };
+    Cuenta.find({numCuenta:cuenta}, function(err, cuenta){
+        if(err){
+            console.log(err);
+        } else {
+            Pago.create(data, function(err, pago){
+                if(err){
+                    console.log(err);
+                } else {
+                    pago.save();
+                    var monto = parseInt(data.monto)
+                    cuenta[0].saldo = cuenta[0].saldo - monto;
+                    cuenta[0].save();
+                    var text = "FECHA: "+ horaFecha.fecha + "     HORA: " + horaFecha.hora + "     CUENTA DE RETIRO: " + cuenta[0].numCuenta + "     EFEC. RETIRADO: $" + pago.monto + "     MOTIVO DE RETIRO: " + pago.descripcion + "     SALDO DISPONIBLE: " + cuenta[0].saldo;
+                    res.render("pagos/retiroQR", {cuenta: cuenta[0], horaFecha:horaFecha, pago:pago, text:text});
+                }
+            })
+        }
+    });
+
+});
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login")
+}
 //, horaFecha: horaFecha, pago:pago
 
 

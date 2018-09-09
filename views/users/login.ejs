@@ -1,0 +1,67 @@
+<% include ../partials/header %>
+
+<style>
+    strong{
+    margin-left: 3%;
+}
+
+h1{
+    margin-top: 15%;
+    margin-left: 15%;
+    color: #00008b;
+}
+
+#select{
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+#log{
+    margin-left:43%;
+}
+
+#hidden{
+    display: none;
+}
+
+input{
+    margin-top: 7%;
+    text-align: center;
+    margin-left: 15%;
+}
+
+#send{
+    margin-top: 3%;
+    margin-left: 55%;
+}
+</style>
+
+<div class="row">
+    <div class="col-md-6"><img src="https://cdn0.talenteca.com/company-images/TK_COMPANY_LOGO-2018_03_28_04_36_35-78689220018807186051.png"></div>
+    <div class="col-md-6"><h1>Ingresa tu NIP</h1></div>
+</div>
+        
+<div class="row">
+    <div class="col-md-12" id="select">
+        <h3><i class="fas fa-keyboard"></i> <strong>Por favor ingresa tu  NIP para poder proceder</strong> </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <i class="fas fa-unlock-alt fa-10x" id="log"></i>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/login" method="POST">
+                    <input id="hidden" value="Hdraw" name="username">
+                    <input type="text" value="5541887542" readonly/>
+                    <input type="password" name="password">
+                    <button type="submit" id="send" class="btn btn-success">Siguiente</button>
+                </form>
+            </div>  
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

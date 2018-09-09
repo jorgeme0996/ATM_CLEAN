@@ -1,0 +1,62 @@
+<% include ../partials/header %>
+
+<style>
+
+strong{
+    margin-left: 3%;
+}
+
+h1{
+    margin-top: 15%;
+    margin-left: 15%;
+    color: #00008b;
+}
+
+#select{
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+#log{
+    margin-left:43%;
+}
+
+.center{
+    margin-left: 4%;
+}
+
+input{
+    text-align: center;
+}
+
+#hidden{
+    display: none;
+}
+</style>
+
+<div class="row">
+    <div class="col-md-6"><img src="https://cdn0.talenteca.com/company-images/TK_COMPANY_LOGO-2018_03_28_04_36_35-78689220018807186051.png"></div>
+    <div class="col-md-6"><h1>Retiro de cuenta</h1></div>
+</div>
+            
+<div class="row">
+    <div class="col-md-12" id="select">
+        <h3><i class="fas fa-keyboard"></i> <strong>Por favor ingresa el monto que quieres retirar</strong> </h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <i class="fas fa-university fa-10x" id="log"></i>
+        <div class="form-goup">
+            <form action="" method="POST">
+                <label>Ingresa en multiplos de 50 el monto que deseas retirar</label>
+                <input id="hidden" value="5541887542" name="cuenta">
+                <input type="number" name="retiro" class="center"> 
+                <button type="submit" class="btn btn-success">Siguiente</button>  
+            </form>   
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

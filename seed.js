@@ -68,6 +68,8 @@ var data = [
             exteriorNumber: "39",
         }],
         email: "ejemplo23@ejemplo.com",
+        username: "ejemplo123",
+        password: "0996"
     }
 ]
 
@@ -87,37 +89,37 @@ function seedDB(){
         } else {
             console.log("Se elimino TODO!!!")
         } 
-    })
+    });
 
-    for(let i in data){
-        User.create(data[i], function(err, user){
-            if(err){
-                console.log(err)
-            } else {
-                console.log("Acabas de añadir un usuario");
-                Cuenta.create(
-                    {
-                        folio: "5635709475",
-                        numCuenta: "6186456702",
-                        clabe: "82928382024930272468",
-                        celular: "5555555555",
-                        correo: "correoprueba2@dominio2.com",
-                        fecha: "10/09/2018 09:45:19",
-                        saldo: 0,
-                        nip: 5678
-                    }, function(err, cuenta){
-                        if(err){
-                            console.log(err)
-                        } else {
-                            user.cuentas.push(cuenta);
-                            user.save();
-                            console.log(user);
-                        }
-                    }
-                )
-            }
-        })
-    }
-}
+//     for(let i in data){
+//         User.create(data[i], function(err, user){
+//             if(err){
+//                 console.log(err)
+//             } else {
+//                 console.log("Acabas de añadir un usuario");
+//                 Cuenta.create(
+//                     {
+//                         folio: "5635709475",
+//                         numCuenta: "6186456702",
+//                         clabe: "82928382024930272468",
+//                         celular: "5555555555",
+//                         correo: "correoprueba2@dominio2.com",
+//                         fecha: "10/09/2018 09:45:19",
+//                         saldo: 0,
+//                         nip: 0996
+//                     }, function(err, cuenta){
+//                         if(err){
+//                             console.log(err)
+//                         } else {
+//                             user.cuentas.push(cuenta);
+//                             user.save();
+//                             console.log(user);
+//                         }
+//                     }
+//                 )
+//             }
+//         })
+//     }
+ }
 
 module.exports = seedDB;

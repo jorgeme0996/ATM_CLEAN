@@ -39,12 +39,15 @@ span{
     margin-left: 10%;
 }
 
+a{
+    margin-top: 3%;
+}
 </style>
 
 
 <div class="row">
     <div class="col-md-6"><img src="https://cdn0.talenteca.com/company-images/TK_COMPANY_LOGO-2018_03_28_04_36_35-78689220018807186051.png"></div>
-    <div class="col-md-6"><h1>Deposito en efectivo a cuentas</h1></div>
+    <div class="col-md-6"><h1>Retiro en efectivo a cuentas</h1></div>
 </div>
     
 <div class="row">
@@ -70,9 +73,10 @@ span{
 
                 <div class="container">
                     <p>NUMERO DE CUENTA: <span><%=cuenta.numCuenta%></span></p>
-                    <p>IMPORTE: <span>$ <%=pago.monto%></span></p>
-                    <p>EFEC. DEPOSITADO: <span> $ <%=pago.monto%></span></p>
+                    <p>IMPORTE: <span>$ -<%=pago.monto%></span></p>
+                    <p>EFEC. DEPOSITADO: <span> $ -<%=pago.monto%></span></p>
                     <p>MOTIVO DE PAGO: <span><%=pago.descripcion%></span></p>
+                    <p>SALDO DISPONIBLE: <span><%=cuenta.saldo%></span><</p>
                     <p class="center"></p>
                 </div>  
             </div>
@@ -83,11 +87,12 @@ span{
             <div class="container">
                 <a href="/" class="btn btn-primary btn-lg">MENU PRINCIPAL</a>
             </div>
-        </div>        
+        </div>   
+        
+        
       
     </div>    
 </div>
 
 
 <% include ../partials/footer %>
-

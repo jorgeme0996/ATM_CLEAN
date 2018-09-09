@@ -1,5 +1,6 @@
 var express     = require("express"),
     router      = express.Router(),
+    passport    = require("passport"),
     User        = require("../models/users");
 
 router.get("/register", function(req, res){
@@ -50,6 +51,17 @@ router.post("/register", function(req, res){
     });
 });
     
+router.get("/login", function(req,res){
+    res.render("users/login", {currentUser: req.user})
+});
 
+router.post("/login", passport.authenticate("local" ,
+    {
+        successRedirect:"/retirar/cuenta",
+        failureRedirect:"/login"
+
+    }) ,function(req, res){
+    
+});
 
 module.exports = router;
