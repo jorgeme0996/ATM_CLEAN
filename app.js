@@ -36,6 +36,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(pagosRoutes);
+app.use(cuentasRoutes);
+app.use(usersRoutes);
+
 app.get("/", function(req, res){
     // if(req.isAuthenticated()){
     //     req.logout();  
@@ -43,11 +47,7 @@ app.get("/", function(req, res){
     res.render("landing")
 })
 
-app.use(pagosRoutes);
-app.use(cuentasRoutes);
-app.use(usersRoutes);
-
-app.listen(3000, function(){
+app.listen(process.env.PORT,process.env.IP, function(){
     console.log("Esta vivo ")
 });
 
